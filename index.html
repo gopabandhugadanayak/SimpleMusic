@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hBD</title>
+       <style>
+           .banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url(media/bg4.jpg);
+    background-size: cover;
+    background-position: center;
+}
+/* navbar */
+.navbar{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+  
+}
+ 
+.navbar ul li{
+     list-style: none;
+     display:inline-block ;
+     margin: 0 20px;
+     
+}
+
+
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #009688;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+.navbar ul li:hover::after{
+    width: 100%;
+
+}
+/* container */
+
+.content{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    text-align: center;
+    color: white;
+}
+.content h1{
+   
+    font-weight:70px;
+    line-height: 80px;
+}
+.content p{
+    margin:20px auto;
+    font-weight:100;
+    line-height: 25px;
+}
+
+#icon{
+    width: 80px;
+    cursor: pointer;
+}
+#footer{
+    background-color: black;
+    height: 60px;
+    display: flex;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-family:Arial, Helvetica, sans-serif;
+}
+       </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/music.html">Music</a></li>
+                <li><a href="/Blog.html">Blog</a></li>
+                <li><a href="/contact.html">contact</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <h1>Feel the music</h1>
+           <p>click here to listen Headphone🎧 recomended</p>
+           <img src="/media/play.png" id="icon">
+           <P>Just close you eyes and feel the music 
+            ,<br> This is music is from "Hello " movie
+          </P>
+        </div>
+
+    </div>
+    <footer id = "footer">
+        Copyright © 2019 Gopabandhu.com | All rights reserved
+    </footer>
+    <audio id="mySong">
+        <source src="media/hello8D.mp3" type="audio/mp3">
+    </audio>
+<script>
+    var mySong = document.getElementById("mySong");
+    var icon = document.getElementById("icon");
+    icon.onclick = function(){
+        
+        if(mySong.paused){
+            mySong.play();
+            icon.src = "media/pause.png";
+        }
+        else{
+            mySong.pause();
+            icon.src ="media/play.png";
+        }
+
+    }
+
+    
+</script>
+
+</body>
+</html>
